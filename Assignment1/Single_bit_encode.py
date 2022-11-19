@@ -2,10 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-txtfile = open("Assignment1\signal.txt", "r")
+txtfile = open("signal.txt", "r")
 read = txtfile.readlines()
 data = []                                    #array for data to be saved in
-SLEW_STEP_SIZE = 0.001                       #FACTOR FOR MANIUPULATING SLEW RATE
+SLEW_STEP_SIZE = 0.001                     #FACTOR FOR MANIUPULATING SLEW RATE
 TIME_STEP = 0.01
 
 #read the data from signal.txt file line by line and safe it in array data
@@ -33,9 +33,9 @@ for value in data:
     count_original_time += 0.01
     original_time.append(count_original_time)
 
-n_th_element = int(TIME_STEP / 0.01)
+n_th_element = int(TIME_STEP / 0.01)                        #calculate which n-th element of original data to pick depending on sampling time step
 
-n_data = data[:: n_th_element]
+n_data = data[:: n_th_element]                              #pick out every n-th element of data
 
 
 for i,value in enumerate(n_data):
@@ -95,8 +95,6 @@ def decode_bits(encoded_bits, slew_step = 0.001):
 
     return digital_value
 '''
-
-decode_bits(data)
 
 
 
